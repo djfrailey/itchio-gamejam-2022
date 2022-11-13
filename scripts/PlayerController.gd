@@ -20,7 +20,7 @@ func _process(delta):
 		
 	_handle_punch()
 	
-	if (_animPlayer.current_animation == "" or _animPlayer.current_animation == _IDLE_ANIMATION):
+	if (_animPlayer.current_animation == ""):
 		_can_move = true
 		_start_animation(_IDLE_ANIMATION)
 
