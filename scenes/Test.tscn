@@ -20,3 +20,4 @@ shape = SubResource( 1 )
 
 [node name="Bull" parent="." instance=ExtResource( 1 )]
 position = Vector2( 3, 49 )
+_movement_speed = 30.0

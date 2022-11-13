@@ -202,7 +202,9 @@ anims/Walk = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+process_mode = 0
 smoothing_enabled = true
+offset_h = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
