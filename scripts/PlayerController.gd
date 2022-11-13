@@ -53,7 +53,7 @@ func _handle_movement(delta):
 		_start_animation(_WALK_ANIMATION)
 		velocity.x = -1 * _movement_speed
 	
-	if (_is_walking() and (Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left)"))):
+	if (_is_walking() and (Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left"))):
 		_animPlayer.stop()
 	
 	if (_is_walking()):
