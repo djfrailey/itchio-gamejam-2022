@@ -49,3 +49,4 @@ func _start_animation(animation : String):
 	assert(_animPlayer.has_animation(animation) == true, "Requested animation not present in PlayerController Requested:" + animation)
 	if (_animPlayer.current_animation != animation):
 		_animPlayer.play(animation)
+		_animPlayer.advance(0) # Used in case properties are mutated before the animation is started.
