@@ -5,7 +5,6 @@
 
 [sub_resource type="Animation" id=1]
 length = 0.3
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -69,7 +68,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=2]
 length = 0.6
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -133,7 +131,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=3]
 length = 0.6
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -212,7 +209,7 @@ texture = ExtResource( 1 )
 hframes = 2
 vframes = 2
 __meta__ = {
-"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PUFuaW1hdGlvblBsYXllcgpzb3VyY2V8PXJlczovL2Fzc2V0cy9CdWxsLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1UcnVlCm9fZm9sZGVyfD1yZXM6Ly9hc3NldHMvQnVsbApvX25hbWV8PQpvbmx5X3Zpc2libGV8PUZhbHNlCm9fZXhfcHw9Cg=="
+"_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PUFuaW1hdGlvblBsYXllcgpzb3VyY2V8PXJlczovL2Fzc2V0cy9CdWxsLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1GYWxzZQpvX2ZvbGRlcnw9cmVzOi8vYXNzZXRzL0J1bGwKb19uYW1lfD0Kb25seV92aXNpYmxlfD1GYWxzZQpvX2V4X3B8PQo="
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
