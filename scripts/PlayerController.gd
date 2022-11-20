@@ -11,6 +11,7 @@ onready var _sprite : Sprite = $Sprite
 onready var _camera : Camera2D= $Camera2D
 
 var _can_move : bool = true # Used to prevent Player from moving while Punching.
+var _targeted_punchable : Punchable = null
 
 ## OVERRIDES
 
@@ -26,15 +27,26 @@ func _physics_process(delta):
 	if (_animPlayer.current_animation == ""):
 		_can_move = true
 		_start_animation(_IDLE_ANIMATION)
-
-## PUBLIC METHODS
-
-## PRIVATE METHODS
+		
+## SIGNAL HANDLERS
 
 func _on_animPlayer_animation_finished(anim_name : String):
 	# Dirty hack since I didn't add a third frame for the punch animation :(
 	if (anim_name == _PUNCH_ANIMATION):
 		_start_animation(_IDLE_ANIMATION)
+		if (_targeted_punchable):
+			_targeted_punchable.record_punch()
+
+func _on_PunchCollider_body_entered(body):
+	if (body.has_node("Punchable")):
+		_targeted_punchable = body.get_node("Punchable")
+		
+func _on_PunchCollider_body_exited(body):
+	_targeted_punchable = null
+		
+## PUBLIC METHODS
+
+## PRIVATE METHODS
 
 func _handle_punch():
 	if (Input.is_action_just_pressed("ui_select")):
@@ -71,6 +83,9 @@ func _flip_left():
 
 func _is_walking():
 	return _animPlayer.current_animation == _WALK_ANIMATION
+
+func _is_punching():
+	return _animPlayer.current_animation == _PUNCH_ANIMATION
 
 func _start_animation(animation : String):
 	assert(_animPlayer.has_animation(animation) == true, "Requested animation not present in PlayerController Requested:" + animation)
