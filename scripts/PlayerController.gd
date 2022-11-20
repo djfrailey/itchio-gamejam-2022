@@ -8,7 +8,7 @@ export var _movement_speed : float = 5.0
 
 onready var _animPlayer : AnimationPlayer = $AnimationPlayer
 onready var _sprite : Sprite = $Sprite
-onready var _camera : Camera2D= $Camera2D
+onready var _camera : Camera2D = $Camera2D
 
 var _can_move : bool = true # Used to prevent Player from moving while Punching.
 var _targeted_punchable : Punchable = null
