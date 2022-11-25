@@ -67,3 +67,4 @@ _movement_speed = 30.0
 
 [node name="Worker" parent="." instance=ExtResource( 5 )]
 position = Vector2( -334, -32 )
+_movement_speed = 30.0

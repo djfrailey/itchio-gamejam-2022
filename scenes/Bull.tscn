@@ -214,7 +214,6 @@ anims/Walk = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-process_mode = 0
 smoothing_enabled = true
 offset_h = 1.0
 
@@ -222,7 +221,6 @@ offset_h = 1.0
 texture = ExtResource( 1 )
 hframes = 2
 vframes = 2
-frame = 2
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PUFuaW1hdGlvblBsYXllcgpzb3VyY2V8PXJlczovL2Fzc2V0cy9CdWxsLmFzZXByaXRlCmxheWVyfD0Kb3BfZXhwfD1GYWxzZQpvX2ZvbGRlcnw9cmVzOi8vYXNzZXRzL0J1bGwKb19uYW1lfD0Kb25seV92aXNpYmxlfD1GYWxzZQpvX2V4X3B8PQo="
 }
@@ -232,6 +230,7 @@ position = Vector2( -3, 7 )
 shape = SubResource( 5 )
 
 [node name="PunchCollider" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PunchCollider"]
 position = Vector2( 9, 4 )
@@ -240,6 +239,3 @@ shape = SubResource( 6 )
 [node name="Punchable" type="Node2D" parent="."]
 script = ExtResource( 3 )
 punches_till_death = 6
-
-[connection signal="body_entered" from="PunchCollider" to="." method="_on_PunchCollider_body_entered"]
-[connection signal="body_exited" from="PunchCollider" to="." method="_on_PunchCollider_body_exited"]

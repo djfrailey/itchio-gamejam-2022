@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Actor.gd"
 }, {
-"base": "StaticBody2D",
+"base": "Area2D",
 "class": "ChinaHutch",
 "language": "GDScript",
 "path": "res://scripts/ChinaHutch.gd"
@@ -23,6 +23,11 @@ _global_script_classes=[ {
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "Actor",
+"class": "PlayerController",
+"language": "GDScript",
+"path": "res://scripts/PlayerController.gd"
 }, {
 "base": "Node2D",
 "class": "Punchable",
@@ -33,6 +38,7 @@ _global_script_class_icons={
 "Actor": "",
 "ChinaHutch": "",
 "GitAPI": "",
+"PlayerController": "",
 "Punchable": ""
 }
 
