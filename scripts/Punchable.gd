@@ -8,7 +8,7 @@ signal destroyed
 
 func record_punch():
 	punches_till_death -= 1
-	print(get_parent().get_name(), " was punched")
 	if (punches_till_death <= 0):
-		print(get_parent().get_name(), " was destroyed")
-		get_parent().queue_free()
+		emit_signal('destroyed')
+	else:
+		emit_signal('punched')

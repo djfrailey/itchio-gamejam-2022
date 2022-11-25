@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/China_Hutch.png" type="Texture" id=1]
 [ext_resource path="res://scripts/ChinaHutch.gd" type="Script" id=2]
 [ext_resource path="res://scripts/Punchable.gd" type="Script" id=3]
+[ext_resource path="res://materials/GlassShatterMaterial.tres" type="Material" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14, 30.5 )
@@ -21,3 +22,16 @@ shape = SubResource( 1 )
 
 [node name="Punchable" type="Node2D" parent="."]
 script = ExtResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 16, 26 )
+emitting = false
+amount = 15
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = ExtResource( 4 )
+
+[connection signal="destroyed" from="Punchable" to="." method="_on_Punchable_destroyed"]
+[connection signal="punched" from="Punchable" to="." method="_on_Punchable_punched"]

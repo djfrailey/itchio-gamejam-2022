@@ -1,0 +1,17 @@
+[gd_resource type="ParticlesMaterial" format=2]
+
+[resource]
+emission_shape = 5
+emission_ring_radius = 18.47
+emission_ring_inner_radius = 0.0
+emission_ring_height = 1.0
+emission_ring_axis = Vector3( 0, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 8.0
+initial_velocity_random = 1.0
+angular_velocity = 30.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.607843, 0.952941, 0.988235, 1 )
