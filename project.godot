@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Actor.gd"
 }, {
+"base": "StaticBody2D",
+"class": "ChinaHutch",
+"language": "GDScript",
+"path": "res://scripts/ChinaHutch.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
+"ChinaHutch": "",
 "GitAPI": "",
 "Punchable": ""
 }
