@@ -2,10 +2,8 @@ extends Area2D
 
 class_name ChinaHutch
 
-
 func _on_Punchable_destroyed():
-	pass # Replace with function body.
-
+	queue_free()
 
 func _on_Punchable_punched():
 	$Particles2D.restart()

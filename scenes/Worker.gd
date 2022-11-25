@@ -54,3 +54,7 @@ func _on_PunchCollider_body_exited(body):
 	if (body.get_name() == "Bull" and _STATE_ATTACKING):
 		_colliding_with_player = false
 		_start_animation(_IDLE_ANIMATION)
+
+
+func _on_Punchable_destroyed():
+	queue_free()

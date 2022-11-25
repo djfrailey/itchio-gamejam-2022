@@ -244,3 +244,4 @@ cast_to = Vector2( 50, 0 )
 [connection signal="body_entered" from="PunchCollider" to="." method="_on_PunchCollider_body_entered"]
 [connection signal="body_exited" from="PunchCollider" to="." method="_on_PunchCollider_body_exited"]
 [connection signal="area_entered" from="AreaCollider" to="." method="_on_AreaCollider_area_entered"]
+[connection signal="destroyed" from="Punchable" to="." method="_on_Punchable_destroyed"]
