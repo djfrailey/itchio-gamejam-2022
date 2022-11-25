@@ -238,4 +238,4 @@ shape = SubResource( 6 )
 
 [node name="Punchable" type="Node2D" parent="."]
 script = ExtResource( 3 )
-punches_till_death = 6
+punches_till_death = 15
