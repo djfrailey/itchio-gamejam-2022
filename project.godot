@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Bull in China Shop"
-run/main_scene="res://scenes/Test.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
