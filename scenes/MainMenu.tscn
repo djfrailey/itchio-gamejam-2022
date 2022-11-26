@@ -20,25 +20,27 @@ margin_bottom = 108.0
 alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-margin_top = 77.0
-margin_right = 155.0
-margin_bottom = 91.0
+margin_top = 75.0
+margin_right = 189.0
+margin_bottom = 90.0
 theme = ExtResource( 2 )
 text = "BULL: IN A CHINA SHOP"
 align = 1
 valign = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
-margin_top = 95.0
-margin_right = 155.0
+margin_top = 94.0
+margin_right = 189.0
 margin_bottom = 115.0
+theme = ExtResource( 2 )
 shortcut_in_tooltip = false
 text = "PLAY"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 margin_top = 119.0
-margin_right = 155.0
-margin_bottom = 139.0
+margin_right = 189.0
+margin_bottom = 140.0
+theme = ExtResource( 2 )
 text = "EXIT"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]

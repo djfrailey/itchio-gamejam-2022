@@ -66,6 +66,10 @@ version_control_plugin_name="GitAPI"
 
 enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg" )
 
+[gui]
+
+theme/custom="res://themes/Default.tres"
+
 [importer_defaults]
 
 texture={
