@@ -19,7 +19,9 @@ var _can_move : bool = true # Used to prevent Actor from moving while Punching.
 var _movement_direction : int = _MOVE_RIGHT
 
 func _ready():
-	print(self.get_name(), " animation connected")
+	if (scale.x == -1):
+		_movement_direction = _MOVE_LEFT
+		
 	_animPlayer.connect("animation_finished", self, "_on_animPlayer_animation_finished")
 
 func _on_animPlayer_animation_finished(anim_name : String):
