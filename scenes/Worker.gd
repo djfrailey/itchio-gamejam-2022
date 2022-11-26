@@ -34,21 +34,26 @@ func _walk(delta):
 	
 	_start_animation(_WALK_ANIMATION)
 	move_and_collide(velocity * delta)
-
+	
+func _change_walk_direction() -> void:
+	if (_is_walking_right()):
+		_set_move_direction(_MOVE_LEFT)
+	else:
+		_set_move_direction(_MOVE_RIGHT)
+		
+	_flip()
 
 func _on_AreaCollider_area_entered(area):
-	if (area as ChinaHutch and _state == _STATE_WALKING):
-		if (_is_walking_right()):
-			_set_move_direction(_MOVE_LEFT)
-		else:
-			_set_move_direction(_MOVE_RIGHT)
-			
-		_flip()
+	if ((area as ChinaHutch or area as TileMap) and _state == _STATE_WALKING):
+		_change_walk_direction()
 
 
 func _on_PunchCollider_body_entered(body):
 	if (body.get_name() == "Bull" and _STATE_ATTACKING):
 		_colliding_with_player = true
+		
+	if (body as TileMap):
+		_change_walk_direction()
 
 func _on_PunchCollider_body_exited(body):
 	if (body.get_name() == "Bull" and _STATE_ATTACKING):
