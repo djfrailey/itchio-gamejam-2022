@@ -9,6 +9,7 @@ const _STATE_ATTACKING : int = 2
 
 var _state : int = _STATE_WALKING
 var _colliding_with_player : bool = false
+var _can_punch = true
 
 func _process(delta):
 	if (_visionDetector.is_colliding()):
@@ -18,11 +19,17 @@ func _process(delta):
 	else:
 		_state = _STATE_WALKING
 	
-	if (_colliding_with_player and !_is_punching()):
+	if (_colliding_with_player and !_is_punching() and _can_punch):
+		_can_punch = false
 		_handle_punch()
 	
-	if (!_is_punching()):
+	if (!_is_punching() and !_colliding_with_player):
 		_walk(delta)
+
+func _handle_punch():
+	._handle_punch()
+	yield(get_tree().create_timer(0.65), "timeout")
+	_can_punch = true
 
 func _walk(delta):
 	var velocity = Vector2()

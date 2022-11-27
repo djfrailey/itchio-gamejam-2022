@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/Worker.png" type="Texture" id=1]
+[ext_resource path="res://assets/Worker/Worker.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Punchable.gd" type="Script" id=2]
-[ext_resource path="res://scenes/Worker.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Worker.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.3
@@ -68,7 +68,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-length = 0.9
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -124,10 +124,10 @@ tracks/4/loop_wrap = false
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0.0, 2.0, 0.0 ]
+"values": [ 0.0, 2.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -212,6 +212,7 @@ anims/Walk = SubResource( 3 )
 texture = ExtResource( 1 )
 hframes = 2
 vframes = 2
+frame = 2
 __meta__ = {
 "_editor_description_": "YXNlcHJpdGVfd2l6YXJkX2NvbmZpZwpwbGF5ZXJ8PUFuaW1hdGlvblBsYXllcgpzb3VyY2V8PXJlczovL2Fzc2V0cy9Xb3JrZXIuYXNlcHJpdGUKbGF5ZXJ8PQpvcF9leHB8PUZhbHNlCm9fZm9sZGVyfD0Kb19uYW1lfD0Kb25seV92aXNpYmxlfD1GYWxzZQpvX2V4X3B8PQo="
 }
@@ -239,7 +240,13 @@ punches_till_death = 4
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 50, 0 )
+cast_to = Vector2( 100, 0 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = -30.0
+margin_top = -32.0
+margin_right = 25.0
+margin_bottom = -19.0
 
 [connection signal="body_entered" from="PunchCollider" to="." method="_on_PunchCollider_body_entered"]
 [connection signal="body_exited" from="PunchCollider" to="." method="_on_PunchCollider_body_exited"]
