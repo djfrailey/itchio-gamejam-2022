@@ -242,12 +242,6 @@ punches_till_death = 4
 enabled = true
 cast_to = Vector2( 100, 0 )
 
-[node name="Control" type="Control" parent="."]
-margin_left = -30.0
-margin_top = -32.0
-margin_right = 25.0
-margin_bottom = -19.0
-
 [connection signal="body_entered" from="PunchCollider" to="." method="_on_PunchCollider_body_entered"]
 [connection signal="body_exited" from="PunchCollider" to="." method="_on_PunchCollider_body_exited"]
 [connection signal="area_entered" from="AreaCollider" to="." method="_on_AreaCollider_area_entered"]
