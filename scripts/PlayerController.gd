@@ -2,9 +2,16 @@ extends Actor
 
 class_name PlayerController
 
-onready var _camera : Camera2D = $Camera2D
+export(NodePath) var ui_manager_node_path
 
-## OVERRIDES
+onready var _camera : Camera2D = $Camera2D
+onready var UIController : UIManager = get_node(ui_manager_node_path)
+onready var PunchableComponent : Punchable = get_node("Punchable")
+
+func _ready():
+	._ready()
+	UIController.set_player_max_health(PunchableComponent.punches_till_death)
+	UIController.set_player_health(PunchableComponent.punches_till_death)
 
 func _process(delta):
 	if (_can_move):
@@ -16,12 +23,6 @@ func _process(delta):
 		_can_move = true
 		_start_animation(_IDLE_ANIMATION)
 		
-## SIGNAL HANDLERS
-		
-## PUBLIC METHODS
-
-## PRIVATE METHODS
-
 func _handle_punch():
 	if (Input.is_action_just_pressed("ui_select")):
 		._handle_punch()
@@ -47,3 +48,21 @@ func _handle_movement(delta):
 	
 	if (_is_walking()):
 		move_and_collide(velocity * delta)
+
+
+func _on_Punchable_punched():
+	UIController.set_player_health(PunchableComponent.punches_till_death)
+
+func _on_Punchable_destroyed():
+	UIController.connect("conversation_ended", self, "_on_UIController_conversation_ended")
+	UIController.start_conversation("res://assets/conversations/death.txt")
+
+func _on_UIController_conversation_ended(conversation):
+	if (conversation == "death.txt"):
+		# This is in a few places and should be moved to a
+		# singleton
+		get_tree().change_scene("res://scenes/MainMenu.tscn")
+
+func add_health(amount : int):
+	PunchableComponent.increase_punches_till_death(amount)
+	UIController.set_player_health(PunchableComponent.punches_till_death)

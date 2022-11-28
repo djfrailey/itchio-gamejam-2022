@@ -242,3 +242,6 @@ shape = SubResource( 6 )
 [node name="Punchable" type="Node2D" parent="."]
 script = ExtResource( 3 )
 punches_till_death = 15
+
+[connection signal="destroyed" from="Punchable" to="." method="_on_Punchable_destroyed"]
+[connection signal="punched" from="Punchable" to="." method="_on_Punchable_punched"]
